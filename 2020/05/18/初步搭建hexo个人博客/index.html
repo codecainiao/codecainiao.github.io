@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>初步搭建hexo个人博客 | Hexo</title>
+  <title>初步搭建hexo个人博客 | CodeCaiNiao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#安装Nodejs 安装git,配置身份  以管理员身份打开cmdnode -v #查看node版本npm -v #查看npm版本 ##npm镜像源在国内速度很慢，这里使用taobao的镜像源npm install -g cnpm –registry&#x3D;http:&#x2F;&#x2F;registry.npm.taobao.org #安装淘宝的cnpm 管理器cnpm -v #查看cnpm版本">
+  <meta name="description" content="#安装Nodejs#安装git #设置用户名和邮箱地址 以管理员身份打开cmdnode -v #查看node版本npm -v #查看npm版本  ##npm镜像源在国内速度很慢，这里使用taobao的镜像源">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初步搭建hexo个人博客">
 <meta property="og:url" content="http://yoursite.com/2020/05/18/%E5%88%9D%E6%AD%A5%E6%90%AD%E5%BB%BAhexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="#安装Nodejs 安装git,配置身份  以管理员身份打开cmdnode -v #查看node版本npm -v #查看npm版本 ##npm镜像源在国内速度很慢，这里使用taobao的镜像源npm install -g cnpm –registry&#x3D;http:&#x2F;&#x2F;registry.npm.taobao.org #安装淘宝的cnpm 管理器cnpm -v #查看cnpm版本">
+<meta property="og:site_name" content="CodeCaiNiao">
+<meta property="og:description" content="#安装Nodejs#安装git #设置用户名和邮箱地址 以管理员身份打开cmdnode -v #查看node版本npm -v #查看npm版本  ##npm镜像源在国内速度很慢，这里使用taobao的镜像源">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-18T06:46:18.000Z">
-<meta property="article:modified_time" content="2020-05-18T07:41:16.315Z">
+<meta property="article:modified_time" content="2020-05-18T08:39:26.012Z">
 <meta property="article:author" content="CodeCaiNiao">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="CodeCaiNiao" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -174,32 +174,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#安装Nodejs<br> 安装git,配置身份</p>
+        <p>#安装Nodejs<br>#安装git #设置用户名和邮箱地址</p>
+<h2 id="以管理员身份打开cmd"><a href="#以管理员身份打开cmd" class="headerlink" title="以管理员身份打开cmd"></a>以管理员身份打开cmd</h2><p>node -v #查看node版本<br>npm -v #查看npm版本</p>
 <hr>
-<p>以管理员身份打开cmd<br>node -v #查看node版本<br>npm -v #查看npm版本</p>
-<p>##npm镜像源在国内速度很慢，这里使用taobao的镜像源<br>npm install -g cnpm –registry=<a href="http://registry.npm.taobao.org" target="_blank" rel="noopener">http://registry.npm.taobao.org</a> #安装淘宝的cnpm 管理器<br>cnpm -v #查看cnpm版本</p>
+<p>##npm镜像源在国内速度很慢，这里使用taobao的镜像源</p>
 <a id="more"></a>
-
-<p>cnpm install -g hexo-cli #安装hexo框架<br>hexo -v #查看hexo版本</p>
-<p>mkdir blog #创建blog目录<br>cd blog #进入blog目录</p>
-<p>##在windows系统环境下无sudo命令，hexo init即可<br>sudo hexo init #生成博客 初始化博客<br>hexo s #启动本地博客服务</p>
-<p>##搭建博客成功，在浏览器打开<br><a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> #本地访问地址<br>CTRL+c断开连接<br>hexo n “我的第一篇文章” #创建新的文章</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=http://registry.npm.taobao.org <span class="string">"#安装淘宝的cnpm 管理器"</span></span><br><span class="line">cnpm -v <span class="string">"#查看cnpm版本"</span></span><br><span class="line"></span><br><span class="line">cnpm install -g hexo-cli <span class="string">"#安装hexo框架"</span></span><br><span class="line">hexo -v <span class="string">"#查看hexo版本"</span></span><br><span class="line"></span><br><span class="line">mkdir blog <span class="string">"#创建blog目录"</span></span><br><span class="line"><span class="built_in">cd</span> blog <span class="string">"#进入blog目录"</span></span><br></pre></td></tr></table></figure>
+<p>##在windows系统环境下无sudo命令，hexo init即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo hexo init <span class="string">"#生成博客 初始化博客"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s <span class="string">"#启动本地博客服务"</span></span><br></pre></td></tr></table></figure>
+<p>##搭建博客成功，在浏览器打开<br><a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> #本地访问地址<br>CTRL+c断开连接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n <span class="string">"我的第一篇文章"</span> <span class="string">"#创建新的文章"</span></span><br></pre></td></tr></table></figure>
 <p>推荐使用Notepad++修改文章<br>或<br>cd source/_posts #进入此目录修改文章</p>
-<p>#返回blog目录<br>cd ../.. #返回上两级<br>hexo clean #清理<br>hexo g #生成</p>
-<hr>
-<p>#Github创建一个新的仓库<br>浏览器打看GitHub网站，新建仓库，仓库名称为 你的GitHub名称.github.io<br>cnpm install –save hexo-deployer-git #在blog目录下安装git部署插件</p>
-<hr>
+<p>#返回blog目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ../.. <span class="string">"#返回上两级"</span></span><br><span class="line">hexo clean <span class="string">"#清理"</span></span><br><span class="line">hexo g <span class="string">"#生成"</span></span><br></pre></td></tr></table></figure>
+<p>#Github创建一个新的仓库<br>浏览器打看GitHub网站，新建仓库，仓库名称为 你的GitHub名称.github.io</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git <span class="string">"#在blog目录下安装git部署插件"</span></span><br></pre></td></tr></table></figure>
 <p>#配置_config.yml<br>使用Notepad++或进入_config.yml修改</p>
 <p>Deployment<br>Docs: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">https://hexo.io/docs/deployment.html</a></p>
 <p>deploy:<br>type: git<br>repo: <a href="https://github.com/你的GitHub名称/你的GitHub名称.github.io.git" target="_blank" rel="noopener">https://github.com/你的GitHub名称/你的GitHub名称.github.io.git</a><br>branch: master</p>
 <hr>
 <p>hexo d #部署到Github仓库里<br>https://你的GitHub名称.github.io/ #访问这个地址可以查看博客</p>
 <hr>
-<p>#初步使用主题，网上有许多主题，这里推荐一个<br>git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia #下载yilia主题到本地</p>
-<hr>
+<p>#初步使用主题，网上有许多主题，这里推荐一个</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git themes/yilia <span class="string">"#下载yilia主题到本地"</span></span><br></pre></td></tr></table></figure>
 <p>#修改hexo根目录下的_config.yml文件<br>theme: yilia</p>
-<hr>
-<p>hexo c #清理一下<br>hexo g #生成<br>hexo d #部署到远程Github仓库<br><a href="https://YourGithubName.github.io/" target="_blank" rel="noopener">https://YourGithubName.github.io/</a> #查看博客</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo c <span class="string">"#清理一下"</span></span><br><span class="line">hexo g <span class="string">"#生成"</span></span><br><span class="line">hexo d <span class="string">"#部署到远程Github仓库"</span></span><br></pre></td></tr></table></figure>
+<h2 id="https-YourGithubName-github-io-查看博客"><a href="#https-YourGithubName-github-io-查看博客" class="headerlink" title="https://YourGithubName.github.io/ #查看博客"></a><a href="https://YourGithubName.github.io/" target="_blank" rel="noopener">https://YourGithubName.github.io/</a> #查看博客</h2><p>#问题汇总<br>1.hexo s不能启动 #输入 cnpm install hexo-server<br>2.出现ERROR Local hexo not found in D:\hexo #输入 cnpm install<br>3.hexo d报错 #git需要设置用户名和邮箱地址</p>
 
       
 
@@ -299,8 +300,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2020/05/17/%E5%BC%A0%E8%89%B3%E7%9C%8B%E8%BF%99%E9%87%8C/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">张艳看这里</div>
+    <a href="/2020/05/16/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
       <i class="icon-circle-right"></i>
     </a>
   
