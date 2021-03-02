@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2021/3 | CodeCaiNiao</title>
+  <title>Java流程控制 | CodeCaiNiao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="CodeCaiNiao">
-<meta property="og:url" content="http://yoursite.com/archives/2021/03/index.html">
+  <meta name="description" content="用户交互Scanner">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java流程控制">
+<meta property="og:url" content="http://yoursite.com/2021/03/02/Java%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/index.html">
 <meta property="og:site_name" content="CodeCaiNiao">
+<meta property="og:description" content="用户交互Scanner">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-02T09:18:43.317Z">
+<meta property="article:modified_time" content="2021-03-02T09:18:11.567Z">
 <meta property="article:author" content="CodeCaiNiao">
+<meta property="article:tag" content="JavaSE">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="CodeCaiNiao" type="application/atom+xml">
@@ -150,36 +155,144 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Java流程控制" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Java流程控制
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/02/Java%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" class="archive-article-date">
+
+        
+        <a href="/2021/03/02/Java%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" class="archive-article-date">
   	<time datetime="2021-03-02T09:18:43.317Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-02</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/02/Java%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/">Java流程控制</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="用户交互Scanner"><a href="#用户交互Scanner" class="headerlink" title="用户交互Scanner"></a>用户交互Scanner</h3><a id="more"></a>
+<ul>
+<li>Java提供了一个工具类来获取用户的输入。java.util.Scanner是Java5的新特征，<strong>我们可以通过Sanner类来获取用户的输入</strong>。语法如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Scanner s &#x3D; new Scanner(System.in); &#x2F;&#x2F;新建了一个Scanner s</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
+<ul>
+<li>通过Scanner类的next（），nextLine（）方法可以获取输入的字符串，在读取前我们一般需要使用hasNext（），hasNextLine（）判断是否还有输入的数据。 ，nextLine（）接收下一行数据。扫描仪是从IO流中读取数据，如果不关闭就会一直占用空间，那么每次使用完后使用close（）方法手动关闭是一个好习惯。为了弄清楚一些关于Scanner的简单问题，看下面的示例程序：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//新建一个scanner</span></span><br><span class="line">        Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="comment">//新建了一个字符串类接收用户的输入,示例输入Hello world!</span></span><br><span class="line">        String str = scanner.next();  <span class="comment">//程序暂停等待我们输入</span></span><br><span class="line">        System.out.println(str); <span class="comment">// 输出了“Hello”。</span></span><br><span class="line">        <span class="comment">//str接收下一行数据</span></span><br><span class="line">        str = scanner.nextLine();  </span><br><span class="line">        <span class="comment">//程序没有暂停等待我们的输入，直接输出了，为什么？</span></span><br><span class="line">        System.out.println(str); <span class="comment">//输出“ world!”</span></span><br><span class="line">        <span class="comment">//str接收下一行数据</span></span><br><span class="line">        str = scanner.nextLine(); <span class="comment">//程序暂停等待我们的输入</span></span><br><span class="line">        System.out.println(str); <span class="comment">//程序输出“Hello world!"</span></span><br><span class="line">        scanner.close(); <span class="comment">//关闭scanner</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>next（）：</p>
+<ul>
+<li>一定要读取到有效字符后才可以结束输入</li>
+<li>对输入有效字符之前遇到的空白，next（）方法会自动将其去掉。</li>
+<li>只有输入有效字符后才将其后面输入的空白作为分隔符或结束符</li>
+<li>next（）不能得到带有空格的字符串</li>
+</ul>
+<p>nextLine（）：</p>
+<ul>
+<li>以Enter作结束符，初始化nextLine（）返回的是输入回车之前的所有字符</li>
+<li>可获得空白</li>
+</ul>
+<p>除了next（），nextLine（）这两种方法之外，Scanner类还提供了很多其他的获取输入的方法，如nextInt（），nextDouble（）等，对Java的一些基础数据类型作了一定的支持。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> i = scanner.nextInt(); <span class="comment">//下一个整数</span></span><br><span class="line">        <span class="keyword">double</span> d = scanner.nextDouble();  <span class="comment">//下一个小数</span></span><br><span class="line">        System.out.println(<span class="string">"Int:"</span> + i + <span class="string">", Double: "</span> +d );</span><br><span class="line">        <span class="comment">//建议使用前检查输入数据类型，否者程序会报错</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">      <span class="comment">//我们可以输入多个数字，并求其总和与平均数，每输入一个数字用回车确认，通过输入非数字来结束输入并输出执行结果</span></span><br><span class="line">      <span class="comment">//和</span></span><br><span class="line">      <span class="keyword">double</span> sum = <span class="number">0</span>;</span><br><span class="line">      <span class="comment">//计算输入的多少个数字</span></span><br><span class="line">      <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">      <span class="comment">//通过循环判断是否还有输入，并在里面对每一次进行求和统计</span></span><br><span class="line">      <span class="keyword">while</span> (scanner.hasNextDouble()) &#123;</span><br><span class="line">          sum += scanner.nextDouble();</span><br><span class="line">          count++;</span><br><span class="line">      &#125;</span><br><span class="line">      System.out.println(count+<span class="string">"个数的和为："</span> + sum);</span><br><span class="line">      System.out.println(count+<span class="string">"个数的平均数为："</span> + sum / count);</span><br><span class="line">      scanner.close();</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="一-顺序结构"><a href="#一-顺序结构" class="headerlink" title="一.顺序结构"></a>一.顺序结构</h2><ul>
+<li><p>Java的基本结构就是顺序结构，除非特别说明，否者程序就会按照顺序一句一句执行。</p>
+</li>
+<li><p>顺序结构是最简单的算法结构。</p>
+</li>
+<li><p>语句与语句之间，框与框之间是按照从上到下的顺序进行的，它是由几个个依次执行的处理步骤组成的，<strong>他是任何一个算法都离不开的一种基本算法结构</strong>。</p>
+</li>
+</ul>
+<h2 id="二-选择结构"><a href="#二-选择结构" class="headerlink" title="二.选择结构"></a>二.选择结构</h2><h3 id="if示例"><a href="#if示例" class="headerlink" title="if示例"></a>if示例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">boolean</span> 表达式<span class="number">1</span>) &#123;</span><br><span class="line">    <span class="comment">//布尔表达式1为true时的动作</span></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">boolean</span> 表达式<span class="number">2</span>) &#123;</span><br><span class="line">    <span class="comment">//布尔表达式2为true时的动作</span></span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">boolean</span> 表达式<span class="number">3</span>) &#123;</span><br><span class="line">    <span class="comment">//布尔表达式3为true时的动作</span></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">boolean</span> 表达式<span class="number">4</span>) &#123;</span><br><span class="line">    <span class="comment">//可以无限划分</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意点：</p>
+<p>if语句最多有一个else语句，且else语句一定在所有的else if语句之后</p>
+<p>if语句可以有几个个其他if语句，他们必须在else语句之前，在if语句之后。</p>
+<p>如果选择语句只会执行其中的一个或不执行，当执行了其中的一个语句时，其他语句都将会跳过执行。</p>
+<h3 id="switch示例"><a href="#switch示例" class="headerlink" title="switch示例"></a>switch示例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">witch (expression) &#123;</span><br><span class="line">    <span class="keyword">case</span> value1:</span><br><span class="line">        <span class="comment">//语句</span></span><br><span class="line">        <span class="keyword">break</span>; <span class="comment">//可选，所有break语句全部都是可选</span></span><br><span class="line">    <span class="keyword">case</span> value2:</span><br><span class="line">        <span class="comment">//语句</span></span><br><span class="line">        <span class="keyword">break</span>; <span class="comment">//可选，所有break语句全部都是可选</span></span><br><span class="line">        <span class="comment">//可以有任意个case语句块</span></span><br><span class="line">     <span class="keyword">default</span>： <span class="comment">//可选</span></span><br><span class="line">         <span class="comment">//语句</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>关于switch case的说明：</p>
+<ul>
+<li>switch case 语句中的<code>break;</code> 语句是可选的，有该语句时的执行过程和if else的逻辑相同，只会执行匹配的操作。如果不写<code>break;</code> 语句，则会发生case穿透现象，从匹配的位置向后忽略判断，顺序执行代码。</li>
+<li>switch case 语句中的<code>default;</code> 语句是可选的，该语句作用类似于if else语句中的 else，作为没有匹配的默认选项，如果前面的case都没有匹配成功，则会执行default。</li>
+<li>switch case 语句从JDK8 开始支持字符串类型，原理是利用字符常量对象唯一的hash码进行查询匹配，实际上还是匹配数字。</li>
+</ul>
+</li>
+</ul>
+<h2 id="三-循环结构"><a href="#三-循环结构" class="headerlink" title="三.循环结构"></a>三.循环结构</h2><ul>
+<li><p>while是最基本的循环，他的结构如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">while (boolean 表达式) &#123;</span><br><span class="line">       &#x2F;&#x2F;循环内容</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>do…while循环与while循环类似，不同点在于do .. while循环至少会执行一次。结构如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">do &#123;</span><br><span class="line">   &#x2F;&#x2F;循环内容</span><br><span class="line">&#125; while (boolean 表达式)</span><br></pre></td></tr></table></figure></li>
+<li><p>for循环</p>
+<p>虽然所有循环都可以使用while或者做while表示，但是Java提供了另一种用于循环的语句，使一些循环结构变得更加简单。</p>
+<p>for循环语句是支持迭代的一种通用结构，是最有效，最灵活的循环结构。</p>
+<p>for循环执行的次数是在执行前就确定的。语法格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for (初始化; boolean exp; 迭代因子) &#123;</span><br><span class="line">        &#x2F;&#x2F;循环代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>关于循环：最先执行初始化步骤，可以声明一种类型，但可以初始化多个循环控制变量，可以为空。然后检查布尔表达式的值，如果为true，循环体将被执行，如果为false ，循环终止。也可以为空。布尔表达式为空时，对于循环没有其他流程控制语句就会变成死循环。执行一次循环后，更新循环控制变量（变量因子控制循环变量的变化）。再次检测布尔值表达式，循环执行上面的过程。</p>
+<ul>
+<li>九九乘法表示例</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         * 4. Print 9-9 multiplication table</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j++) &#123;</span><br><span class="line">                System.out.printf(i + <span class="string">"*"</span> + j + <span class="string">" = "</span> + i*j + <span class="string">"\t"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>打印三角形</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//打印三角形</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">5</span>;j&gt;=i;j--)&#123;</span><br><span class="line">                System.out.print(<span class="string">" "</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=i;j++)&#123;</span><br><span class="line">                System.out.print(<span class="string">"*"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;i;k++)&#123;</span><br><span class="line">                System.out.print(<span class="string">"*"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>增强for循环</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] numbers = &#123;<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>,<span class="number">50</span>&#125;;</span><br><span class="line">        <span class="comment">//遍历数组的元素,每循环一次，数组的下一个值就赋给了number</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> number : numbers) &#123;</span><br><span class="line">            System.out.println(number);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>break &amp; continue</p>
+<p> break在任何循环语句的主体部分，都可以使用。它用于<strong>强行退出循环</strong>，不再执行循环中的剩余语句。需要注意的是他一次只能跳出一层循环。</p>
+<p> continue 语句在循环语句中，<strong>用于终止某一次循环过程</strong>，跳过过该次循环直接进行是否循环的判定。</p>
+</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,57 +304,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/03/02/Java%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/01/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95(%E4%B8%80)/" class="archive-article-date">
-  	<time datetime="2021-03-01T09:25:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-01</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/03/01/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95(%E4%B8%80)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">基础语法(一)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/01/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95(%E4%B8%80)/">基础语法(一)</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JavaSE</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -264,8 +426,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
